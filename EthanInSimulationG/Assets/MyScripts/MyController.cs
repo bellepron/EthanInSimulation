@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MyController : MonoBehaviour
 {
-    //aa
     public float camDist = 4;
     public float camAng = 2.5f;
     public float camHigh = 0;
