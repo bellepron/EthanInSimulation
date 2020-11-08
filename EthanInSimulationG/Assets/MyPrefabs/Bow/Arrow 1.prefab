@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2765494750104074781}
   - component: {fileID: 1217453814502134154}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Arrow 1
   m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 4222812266349823206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3732585061395577596}
   - {fileID: 847282966547904364}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23490559892862816}
   - component: {fileID: 6044412054570457681}
   - component: {fileID: 9138104774381636471}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MagicSword_Ice
   m_TagString: Sword
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7827634167839541926}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hit Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,6 +213,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3991155580501508939, guid: aae0bb618263dfc4da3d5c06f668c363,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4078590993211281150, guid: aae0bb618263dfc4da3d5c06f668c363,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key0.r
@@ -302,6 +307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8011295226598709883, guid: aae0bb618263dfc4da3d5c06f668c363,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae0bb618263dfc4da3d5c06f668c363, type: 3}

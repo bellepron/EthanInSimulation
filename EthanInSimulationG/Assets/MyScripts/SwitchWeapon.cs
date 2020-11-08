@@ -37,7 +37,7 @@ public class SwitchWeapon : MonoBehaviour
             {
                 withSword = true;
                 isChanging = true;
-                playerController.SetArsenal("Igne");
+                playerController.SetArsenal("Ice Sword");
                 audioSource.PlayOneShot(changingSound, 0.7f);
                 StartCoroutine(calmDown());
             }
@@ -45,7 +45,7 @@ public class SwitchWeapon : MonoBehaviour
             {
                 withSword = false;
                 isChanging = true;
-                playerController.SetArsenal("DoubleIgne");
+                playerController.SetArsenal("Bow");
                 audioSource.PlayOneShot(changingSound, 0.7f);
                 StartCoroutine(calmDown());
             }
@@ -53,7 +53,7 @@ public class SwitchWeapon : MonoBehaviour
             {
                 withSword = true;
                 isChanging = true;
-                playerController.SetArsenal("Rifle");
+                playerController.SetArsenal("Hammer");
                 audioSource.PlayOneShot(changingSound, 0.7f);
                 StartCoroutine(calmDown());
             }
@@ -61,7 +61,7 @@ public class SwitchWeapon : MonoBehaviour
             {
                 withSword = true;
                 isChanging = true;
-                playerController.SetArsenal("SphereIgne");
+                playerController.SetArsenal("Black Sword");
                 audioSource.PlayOneShot(changingSound, 0.7f);
                 StartCoroutine(calmDown());
             }
@@ -69,7 +69,7 @@ public class SwitchWeapon : MonoBehaviour
             {
                 withSword = true;
                 isChanging = true;
-                playerController.SetArsenal("DoubleSphere");
+                playerController.SetArsenal("Dual Axes");
                 audioSource.PlayOneShot(changingSound, 0.7f);
                 StartCoroutine(calmDown());
             }

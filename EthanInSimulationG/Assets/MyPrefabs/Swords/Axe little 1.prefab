@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 151729759339434167}
   - component: {fileID: 2177529295728623024}
   m_Layer: 2
-  m_Name: Axe little
-  m_TagString: Sword
+  m_Name: Axe little 1
+  m_TagString: Second Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

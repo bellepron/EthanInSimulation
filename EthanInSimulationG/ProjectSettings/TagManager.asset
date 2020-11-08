@@ -10,6 +10,7 @@ TagManager:
   - SwordTrail
   - Bow
   - Arrow
+  - Second Sword
   layers:
   - Default
   - TransparentFX

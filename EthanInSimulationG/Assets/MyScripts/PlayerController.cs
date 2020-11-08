@@ -26,30 +26,26 @@ public class PlayerController : MonoBehaviour
             {
                 if (rightHand.childCount > 0)
                 {
-                    //rightHand.GetChild(0).gameObject.GetComponent<Collider>().enabled = false; //:(
                     Destroy(rightHand.GetChild(0).gameObject);
-                    //rightHand.GetChild(0).gameObject.SetActive(false);
                 }
 
                 if (leftHand.childCount > 0)
                 {
-                    //leftHand.GetChild(0).gameObject.GetComponent<Collider>().enabled = false; //:(
                     Destroy(leftHand.GetChild(0).gameObject);
-                    //leftHand.GetChild(0).gameObject.SetActive(false);
                 }
-                if (hand.rightGun != null)
+                if (hand.rightWeapon != null)
                 {
-                    GameObject newRightGun = (GameObject)Instantiate(hand.rightGun);
-                    newRightGun.transform.parent = rightHand;
-                    newRightGun.transform.localPosition = Vector3.zero;
-                    newRightGun.transform.localRotation = Quaternion.Euler(180, -90, 90);
+                    GameObject newRightWeapon = (GameObject)Instantiate(hand.rightWeapon);
+                    newRightWeapon.transform.parent = rightHand;
+                    newRightWeapon.transform.localPosition = Vector3.zero;
+                    newRightWeapon.transform.localRotation = Quaternion.Euler(180, -90, 90);
                 }
-                if (hand.leftGun != null)
+                if (hand.leftWeapon != null)
                 {
-                    GameObject newLeftGun = (GameObject)Instantiate(hand.leftGun);
-                    newLeftGun.transform.parent = leftHand;
-                    newLeftGun.transform.localPosition = Vector3.zero;
-                    newLeftGun.transform.localRotation = Quaternion.Euler(3, 125, -143);
+                    GameObject newLeftWeapon = (GameObject)Instantiate(hand.leftWeapon);
+                    newLeftWeapon.transform.parent = leftHand;
+                    newLeftWeapon.transform.localPosition = Vector3.zero;
+                    newLeftWeapon.transform.localRotation = Quaternion.Euler(3, 125, -143);
                 }
                 animator.runtimeAnimatorController = hand.controller;
                 return;
@@ -61,8 +57,8 @@ public class PlayerController : MonoBehaviour
     public struct Arsenal
     {
         public string name;
-        public GameObject rightGun;
-        public GameObject leftGun;
+        public GameObject rightWeapon;
+        public GameObject leftWeapon;
         public RuntimeAnimatorController controller;
     }
 }
