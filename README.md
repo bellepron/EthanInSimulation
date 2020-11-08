@@ -1,3 +1,2 @@
 # EthanInSimulation
-my learn by doing project
-bla bla
+idle about
