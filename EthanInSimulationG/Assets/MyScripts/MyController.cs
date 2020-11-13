@@ -15,7 +15,6 @@ public class MyController : MonoBehaviour
     public bool isCrouching = false;
     public float jumpForce = 4f;
     public Rigidbody playerRb;
-    //private Animator animator; ///******
     protected Actions actions;
 
     protected bool isAttacking = false;
@@ -24,7 +23,9 @@ public class MyController : MonoBehaviour
     public bool hasPowerup;
     public float powerupStrength = 500f;
     public GameObject powerupIndicator;
-    public Transform laserPoint; public Transform arrowStartPoint; public Transform arrowStartPoint1;
+    public Transform laserPoint;
+    public Transform arrowStartPoint;
+    public Transform arrowStartPoint1;
     public LineRenderer laserTrail;
     public GameObject laserPointer;
     public bool areEyesHot = false;
@@ -37,17 +38,22 @@ public class MyController : MonoBehaviour
     private GameManager gameManager;
     public float laserDamage = 5f;
     public Collider swordCollider;
-    public Collider swordColliderDual = null; public bool isDualWielding;
+    public Collider swordColliderDual = null;
+    public bool isDualWielding;
     private Collider arrowCollider;
     public GameObject getHitEffect;
-    private ParticleSystem swordTrail; private ParticleSystem swordTrail2;
+    private ParticleSystem swordTrail;
+    private ParticleSystem swordTrail2;
     //private ParticleSystem arrowTrail;
     private bool withSword;
     private Animator animator;
-    private bool isAiming; private bool isAiming1;
+    private bool isAiming;
+    private bool isAiming1;
     public GameObject arrowPrefab;
     public GameObject arrowPrefab1;
-    public bool isChangeable = true; private bool isLaserPointerOn; private bool isLaserOn;
+    public bool isChangeable = true;
+    private bool isLaserPointerOn;
+    private bool isLaserOn;
     public float arrowPowerFactor;
     public bool cantStandUp;
     private float calmDTime;
@@ -58,7 +64,7 @@ public class MyController : MonoBehaviour
     public AudioClip thumbleSound; public AudioClip arrowShootSound; public AudioClip rocketShootSound;
     AudioSource audioSource;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -94,11 +100,10 @@ public class MyController : MonoBehaviour
             playerHealth = GetComponent<HealthController>().health;
 
 
-            PositionDetection();
+            Position();
 
             Walk();
             Jump();
-            //Crouch();
             if (withSword)
                 Attack();
             if (!withSword)
@@ -112,7 +117,6 @@ public class MyController : MonoBehaviour
                 actions.RRR();
             }
             LaserAttack();
-            //Thumble();
             WhenDamaged();
 
             powerupIndicator.transform.position = transform.position + new Vector3(0, 0.5f, 0);
@@ -210,15 +214,14 @@ public class MyController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
         audioSource.PlayOneShot(rocketShootSound, 0.25f);
-        Instantiate(arrowPrefab, arrowStartPoint.position, laserPoint.transform.rotation);  //Laser&arrow point is the same(Aim) or rightHand.pos for arrow
-        arrowCollider = GameObject.FindWithTag("Arrow").GetComponent<Collider>();
+        Instantiate(arrowPrefab, arrowStartPoint.position, laserPoint.transform.rotation);
         arrowPowerFactor = 0.5f;
     }
     IEnumerator ArrowDelay1()
     {
         yield return new WaitForSeconds(0.2f);
         audioSource.PlayOneShot(arrowShootSound, 0.4f);
-        Instantiate(arrowPrefab1, arrowStartPoint1.position, laserPoint.transform.rotation);  //Laser&arrow point is the same(Aim)
+        Instantiate(arrowPrefab1, arrowStartPoint1.position, laserPoint.transform.rotation);
         arrowCollider = GameObject.FindWithTag("Arrow").GetComponent<Collider>();
         arrowPowerFactor = 0.5f;
     }
@@ -370,7 +373,7 @@ public class MyController : MonoBehaviour
         }
     }
 
-    private void PositionDetection()
+    private void Position()
     {
         input = new Vector3(leftJoystick.input.x, 0, leftJoystick.input.y);
         velo = Quaternion.AngleAxis(cameraAngleY, Vector3.up) * input * 5f;
