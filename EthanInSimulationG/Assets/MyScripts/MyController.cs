@@ -36,9 +36,9 @@ public class MyController : MonoBehaviour
     protected bool isAttacking = false;
     float walkingSoundTimer = 0f;
     public float damage = 50f;
-    public bool hasPowerup;
-    public float powerupStrength = 500f;
-    public GameObject powerupIndicator;
+    //public bool hasPowerup;
+    //public float powerupStrength = 500f;
+    //public GameObject powerupIndicator;
     public Transform laserPoint;
     public LineRenderer laserTrail;
     public GameObject laserPointer;
@@ -127,7 +127,7 @@ public class MyController : MonoBehaviour
                 Thumble();
                 WhenDamaged();
 
-                powerupIndicator.transform.position = transform.position + new Vector3(0, 0.5f, 0);
+                //powerupIndicator.transform.position = transform.position + new Vector3(0, 0.5f, 0);
             }
         }
     }
@@ -277,26 +277,26 @@ public class MyController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Powerup"))
-        {
-            hasPowerup = true;
-            Destroy(other.gameObject);
-            powerupIndicator.gameObject.SetActive(true);
-            StartCoroutine(PowerupCountdownRoutine());
-        }
-    }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.gameObject.CompareTag("Powerup"))
+    //     {
+    //         hasPowerup = true;
+    //         Destroy(other.gameObject);
+    //         powerupIndicator.gameObject.SetActive(true);
+    //         StartCoroutine(PowerupCountdownRoutine());
+    //     }
+    // }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Enemy") && hasPowerup)
-        {
-            Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position);
-            enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
-        }
-    }
+    // private void OnCollisionEnter(Collision other)
+    // {
+    //     if (other.gameObject.CompareTag("Enemy") && hasPowerup)
+    //     {
+    //         Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
+    //         Vector3 awayFromPlayer = (other.gameObject.transform.position - transform.position);
+    //         enemyRigidbody.AddForce(awayFromPlayer * powerupStrength, ForceMode.Impulse);
+    //     }
+    // }
 
     private void PositionDetection()
     {
@@ -443,12 +443,12 @@ public class MyController : MonoBehaviour
         isThumbling = false;
     }
 
-    IEnumerator PowerupCountdownRoutine()
-    {
-        yield return new WaitForSeconds(7);
-        hasPowerup = false;
-        powerupIndicator.gameObject.SetActive(false);
-    }
+    //IEnumerator PowerupCountdownRoutine()
+    //{
+    //    yield return new WaitForSeconds(7);
+    //    hasPowerup = false;
+    //    powerupIndicator.gameObject.SetActive(false);
+    //}
     IEnumerator JumpSoundCd()
     {
         audioSource.PlayOneShot(jumpSound, 0.5f);
